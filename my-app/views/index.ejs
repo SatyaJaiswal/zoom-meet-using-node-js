@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Zoom Meeting Scheduler</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    h1 {
+      color: #007bff;
+    }
+
+    .form-container {
+      width: 60%;
+      margin: 0 auto;
+      border: 1px solid #ccc;
+      padding: 20px;
+      border-radius: 5px;
+    }
+
+    .form-container form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .form-container label {
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .form-container input[type="text"],
+    .form-container input[type="date"],
+    .form-container input[type="time"],
+    .form-container input[type="number"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .form-container button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+
+    .form-container button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <h1>Zoom Meeting Scheduler</h1>
+  <div class="form-container">
+    <!-- Schedule a meeting form -->
+    <form action="/schedule" method="post">
+      <label for="topic">Meeting Topic:</label>
+      <input type="text" id="topic" name="topic" required>
+      
+      <label for="date">Date:</label>
+      <input type="date" id="date" name="date" required>
+      
+      <label for="time">Time:</label>
+      <input type="time" id="time" name="time" required>
+      
+      <label for="duration">Duration (minutes):</label>
+      <input type="number" id="duration" name="duration" required>
+      
+      <button type="submit">Schedule Meeting</button>
+    </form>
+  
+    <!-- Start a meeting form -->
+    <form action="/start" method="post">
+      <label for="meetingId">Meeting ID:</label>
+      <input type="text" id="meetingId" name="meetingId" required>
+      
+      <button type="submit">Start Meeting</button>
+    </form>
+  </div>
+</body>
+</html>
